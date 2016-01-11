@@ -34,6 +34,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+
+        app.addIframe();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -45,6 +47,19 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+
+    addIframe : function () {
+        i = document.createElement("iframe");
+
+        i.src = "https://example.org";
+        i.addEventListener('load', this.iframeLoaded, false);
+
+        document.body.appendChild(i);
+    },
+
+    iframeLoaded : function (e) {
+        console.log("iFrame loaded at\n" + e.currentTarget.contentWindow.location.href);
     }
 };
 
