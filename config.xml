@@ -9,7 +9,7 @@
     </author>
     <content src="index.html" />
 
-    <engine name="ios" spec="~3.9.2" />
+    <engine name="ios" spec="~4.0.1" />
 
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
